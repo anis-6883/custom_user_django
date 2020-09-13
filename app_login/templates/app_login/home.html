@@ -1,0 +1,31 @@
+{% extends 'app_login/base.html' %}
+
+{% block body %} 
+
+    <div class="container mt-4">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Serial No</th>
+                <th scope="col">Full Name</th>
+                <th scope="col">Blood Group</th>
+                <th scope="col">Mobile Number</th>
+                <th scope="col">Email</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for donor in donors %}
+              <tr>
+                <th scope="row">{{forloop.counter}}</th>
+                <td>{{donor.full_name}}</td>
+                <td>{{donor.blood_group}}</td>
+                <td>{{donor.phone}}</td>
+                <td>{{donor.email}}</td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          
+          </table>
+    </div>
+
+{% endblock body %}
